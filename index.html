@@ -1,142 +1,104 @@
 <!DOCTYPE html>
 <!--
-  Author: YOUR NAME
-  GU username: YOUR-GU-USERNAME
-  Course: BMIS 235 - HTML-2
+  Author: YOUR NAME (YOUR-GU-USERNAME)
+  Course: BMIS 235
+  Assignment: HTML-2 · Embedding: Mind, Body, Craft
 -->
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="author" content="YOUR NAME">
-
-<!-- this is the title that shows up on the tab of a web browser -->
-<title>John Correia's Podcasts</title>
-
-<style>
-body { font-family: Arial, sans-serif; margin: 0; padding: 0 20px; }
-h1   { text-align: center; }
-h2   { text-align: center; }
-a    { color: inherit; }
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
-}
-
-/* the bottom section: always the opposite color of the page */
-#embed-block {
-    margin: 50px -20px 0;
-    padding: 30px 20px 40px;
-    text-align: center;
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="author" content="YOUR NAME">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Correia's Podcasts</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+    .row { display: flex; gap: 1.5rem; list-style: none; padding: 0; }
+    .row li { flex: 1; text-align: center; }
+    .row img { width: 100%; border-radius: 8px; }
+    iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; }
+    .embed-box { padding: 1.5rem; border-radius: 8px; margin-top: 2rem; }
+    footer { margin-top: 3rem; font-size: 0.9rem; opacity: 0.8; }
+  </style>
 </head>
+<body id="top">
 
-<body>
+  <button onclick="toggleDark()">Dark mode on / off</button>
 
-<!-- ===================== DARK MODE BUTTON ===================== -->
-<!-- Clicking it runs toggleDark(), a tiny program at the bottom   -->
-<!-- of this file.                                                 -->
-<p style="text-align: center;"><button onclick="toggleDark()">Dark mode on / off</button></p>
+  <h1>Professor Correia's Podcasts</h1>
+  <p>Email me at <a href="mailto:correia@gonzaga.edu">correia@gonzaga.edu</a> for episode suggestions</p>
 
-<a id="top"></a>
+  <ul class="row">
+    <!-- MIND: works ✓ — use this one as your model -->
+    <li>
+      <h2>For the Mind</h2>
+      <a href="#findingmastery"><img src="gervais.jpg" alt="Michael Gervais"></a>
+    </li>
 
-<h1>Professor Correia's Podcasts</h1>
-<p style="text-align: center;">Email me at correia@gonzaga.edu for episode suggestions</p>
+    <!-- BODY: fix the image file name and the jump link -->
+    <li>
+      <h2>For the Body</h2>
+      <a href="#hubermanlab"><img src="huberman.jpg" alt="Andrew Huberman"></a>
+    </li>
 
-<!-- ===================== MENU OF IMAGES ===================== -->
-<!-- Click an image and it jumps down to its video.            -->
-<!-- MIND works. Use it as your model.                         -->
-<ul>
+    <!-- CRAFT: image and jump link work ✓ -->
+    <li>
+      <h2>For the Craft</h2>
+      <a href="#lexfridman"><img src="fridman.jpg" alt="Lex Fridman"></a>
+    </li>
+  </ul>
 
-    <li><h2>For the Mind</h2></li>
-    <li><a href="#findingmastery"><img src="gervais.jpg" width="400" height="400" alt="Michael Gervais"></a></li>
+  <hr>
 
-    <li><h2>For the Body</h2></li>
-    <li><a href="#huberman-lab"><img src="Huberman.jpg" width="400" height="400" alt="Andrew Huberman"></a></li>
+  <!-- MIND video: works ✓ -->
+  <a id="findingmastery"></a>
+  <h2>Finding Mastery</h2>
+  <iframe src="https://www.youtube.com/embed/fLqzYDZAqCI" title="Finding Mastery" allowfullscreen></iframe>
 
-    <li><h2>For the Craft</h2></li>
-    <li><a href="#fridman"><img src="fridman.jpg" width="400" height="400" alt="Lex Fridman"></a></li>
+  <!-- BODY video: works ✓ -->
+  <a id="hubermanlab"></a>
+  <h2>Huberman Lab</h2>
+  <iframe src="https://www.youtube.com/embed/pq6WHJzOkno" title="Huberman Lab" allowfullscreen></iframe>
 
-</ul>
+  <!-- CRAFT video: fix the YouTube link so it plays in an embed -->
+  <a id="lexfridman"></a>
+  <h2>Lex Fridman Podcast</h2>
+  <iframe src="https://www.youtube.com/watch?v=JN3KPFbWCy8" title="Lex Fridman Podcast" allowfullscreen></iframe>
 
-<!-- ===================== VIDEO SECTIONS ===================== -->
+  <p><a href="#top">To top</a></p>
 
-<!-- MIND: Finding Mastery -->
-<a id="findingmastery"></a>
-<a href="https://www.youtube.com/@FindingMastery">
-<h2>Finding Mastery</h2>
-</a>
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4L98ssI5Vxw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</center>
+  <!-- YOUR EMBED BLOCK: paste a Google Map or Our World in Data chart here -->
+  <div class="embed-box" id="embedBlock">
+    <h2>My embed</h2>
 
-<!-- BODY: Huberman Lab -->
-<a id="huberman"></a>
-<a href="https://www.youtube.com/@hubermanlab">
-<h2>Huberman Lab</h2>
-</a>
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pq6WHJzOkno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</center>
+  </div>
 
-<!-- CRAFT: Lex Fridman Podcast -->
-<a id="fridman"></a>
-<a href="https://www.youtube.com/@lexfridman">
-<h2>Lex Fridman Podcast</h2>
-</a>
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=kFQUDCgMjRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</center>
+  <footer>Built by YOUR NAME · BMIS 235</footer>
 
-<p style="font-size: small; text-align: center;"><a href="#top">To top</a></p>
+  <script>
+    // 1. Two colors — change these two lines to make it yours
+    let lightColor = "#fdf6e3";
+    let darkColor  = "#1d2021";
 
-<!-- ===================== YOUR EMBED BLOCK ===================== -->
-<!-- This section is always the opposite color of the page.      -->
-<!-- 1. Pick ONE: a Google Map, or an Our World in Data chart.    -->
-<!-- 2. Copy its embed code (it starts with <iframe).             -->
-<!-- 3. Paste it on the empty line below the heading.             -->
-<!-- 4. Change the heading to say what it is.                     -->
-<section id="embed-block">
-<h2>My embed</h2>
+    // 2. A memory of which mode we're in
+    let dark = false;
 
-</section>
+    // 3. Paint the page one color and the embed box the other
+    function paint() {
+      document.body.style.backgroundColor = dark ? darkColor : lightColor;
+      document.body.style.color           = dark ? lightColor : darkColor;
+      let box = document.getElementById("embedBlock");
+      box.style.backgroundColor           = dark ? lightColor : darkColor;
+      box.style.color                     = dark ? darkColor : lightColor;
+    }
 
-<!-- Footer: fill in your name -->
-<p style="text-align: center;">Built by YOUR NAME &middot; BMIS 235</p>
+    // 4. Flip dark mode on click, then repaint
+    function toggleDark() {
+      dark = !dark;
+      paint();
+    }
 
-
-<!-- ===================== DARK MODE SCRIPT ===================== -->
-<script>
-  // 1. Your two colors. Change these to your own.
-  var lightColor = "#f2f2f2";
-  var darkColor  = "#222222";
-
-  // 2. Which mode the page is in right now
-  var dark = false;
-
-  // 3. Paint the page one color and the embed block the other
-  function paint() {
-    var pageColor  = dark ? darkColor  : lightColor;
-    var blockColor = dark ? lightColor : darkColor;
-    document.body.style.backgroundColor = pageColor;
-    document.body.style.color = dark ? "white" : "black";
-    var block = document.getElementById("embed-block");
-    block.style.backgroundColor = blockColor;
-    block.style.color = dark ? "black" : "white";
-  }
-
-  // 4. When the button is clicked: flip the mode, then repaint
-  function toggleDark() {
-    dark = !dark;
+    // 5. Paint once when the page loads
     paint();
-  }
-
-  // 5. Paint once when the page first loads
-  paint();
-</script>
-
+  </script>
 </body>
 </html>
