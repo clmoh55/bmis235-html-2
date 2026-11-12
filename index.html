@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  Author: Christian Mohlenhoff (clmoh55)
+  Author: Christian Mohlenhoff (cmohlenhoff)
   Course: BMIS 235
   Assignment: HTML-2 · Embedding: Mind, Body, Craft
 -->
@@ -22,30 +22,18 @@
 </head>
 <body id="top">
 
-  <button onclick="toggleDark()">Dark mode on / off</button>
+  <header>
+    <h1>Christian Mohlenhoff's Podcasts</h1>
+    <p>Email me at <a href="mailto:cmohlenhoff@zagmail.gonzaga.edu">cmohlenhoff@zagmail.gonzaga.edu</a> for episode suggestions</p>
+  </header>
 
-  <h1>Professor Correia's Podcasts</h1>
-  <p>Email me at <a href="mailto:correia@gonzaga.edu">correia@gonzaga.edu</a> for episode suggestions</p>
-
-  <ul class="row">
-    <!-- MIND: works ✓ — use this one as your model -->
-    <li>
-      <h2>For the Mind</h2>
-      <a href="#findingmastery"><img src="gervais.jpg" alt="Michael Gervais"></a>
-    </li>
-
-    <!-- BODY: fix the image file name and the jump link -->
-    <li>
-      <h2>For the Body</h2>
-      <a href="#hubermanlab"><img src="huberman.jpg" alt="Andrew Huberman"></a>
-    </li>
-
-    <!-- CRAFT: image and jump link work ✓ -->
-    <li>
-      <h2>For the Craft</h2>
-      <a href="#lexfridman"><img src="fridman.jpg" alt="Lex Fridman"></a>
-    </li>
-  </ul>
+  <nav>
+    <ul class="row">
+      <li><a href="#findingmastery">Finding Mastery</a></li>
+      <li><a href="#hubermanlab">Huberman Lab</a></li>
+      <li><a href="#lexfridman">Lex Fridman Podcast</a></li>
+    </ul>
+  </nav>
 
   <hr>
 
@@ -57,7 +45,7 @@
   <!-- BODY video: works ✓ -->
   <a id="hubermanlab"></a>
   <h2>Huberman Lab</h2>
-  <iframe src="https://www.youtube.com/embed/pq6WHJzOkno" title="Huberman Lab" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/pq6WHJz0kno" title="Huberman Lab" allowfullscreen></iframe>
 
   <!-- CRAFT video: fix the YouTube link so it plays in an embed -->
   <a id="lexfridman"></a>
@@ -75,7 +63,7 @@
   <footer>Built by Christian Mohlenhoff · BMIS 235</footer>
 
   <script>
-    // 1. Two colors — change these two lines to make it yours
+    // 1. Two colors – change these two lines to make it yours
     let lightColor = "#E2E8E4";
     let darkColor  = "#2C5234";
 
@@ -99,6 +87,9 @@
 
     // 5. Paint once when the page loads
     paint();
+
+    // 6. When someone clicks anywhere on the body, toggle
+    document.body.addEventListener("click", toggleDark);
   </script>
 </body>
 </html>
