@@ -1,76 +1,141 @@
 <!DOCTYPE html>
-<!--
-  Author: Christian Mohlenhoff (cmohlenhoff)
-  Course: BMIS 235
-  Assignment: HTML-2 · Embedding: Mind, Body, Craft
+<!-- 
+  Author: Christian Mohlenhoff
+  GU username: cmohlenhoff
+  Course: BMIS 235 - HTML-2
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Christian Mohlenhoff">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christian Mohlenhoff's Podcasts</title>
+  
+  <!-- this is the title that shows up on the tab of a web browser -->
+  <title>Christian Mohlenhoff · Mind, Body, Craft</title>
+
   <style>
-    body { font-family: Georgia, serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
-    .row { display: flex; gap: 1.5rem; list-style: none; padding: 0; }
-    .row li { flex: 1; text-align: center; }
-    .row img { width: 100%; border-radius: 8px; }
-    iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; }
-    .embed-box { padding: 1.5rem; border-radius: 8px; margin-top: 2rem; }
-    footer { margin-top: 3rem; font-size: 0.9rem; opacity: 0.8; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0 20px; }
+    h1 { text-align: center; }
+    h2 { text-align: center; }
+    a { color: inherit; }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-align: center;
+    }
+
+    /* the bottom section: always the opposite color of the page */
+    #embed-block {
+      margin: 50px -20px 0;
+      padding: 30px 20px 40px;
+      text-align: center;
+    }
   </style>
 </head>
-<body id="top">
 
-  <header>
-    <h1>Mind, Body, Craft</h1>
-    <p>A curated collection of podcasts for focus, health, and mastery.</p>
-    <nav>
-      <a href="#hubermanlab">Jump to Huberman Lab Video</a>
-    </nav>
-  </header>
+<body>
 
-  <main>
-    <section>
-      <h2>Featured Shows</h2>
-      <ul class="row">
-        <li>
-          <img src="huberman.jpg" alt="Huberman Lab Podcast Banner">
-          <p><strong>Huberman Lab</strong> — Neuroscience & Health</p>
-        </li>
-      </ul>
-    </section>
+  <!-- ===================== DARK MODE BUTTON ===================== -->
+  <!-- Clicking it runs toggleDark(), a tiny program at the bottom -->
+  <!-- of this file. -->
+  <p style="text-align: center;"><button onclick="toggleDark()">Dark mode on / off</button></p>
 
-    <section id="hubermanlab">
-      <h2>Mind & Body: Huberman Lab</h2>
-      <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk" title="Huberman Lab Podcast" allowfullscreen></iframe>
-    </section>
+  <a id="top"></a>
 
-    <section>
-      <h2>Craft & Mastery</h2>
-      <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Lofi Girl Radio" allowfullscreen></iframe>
-    </section>
+  <h1>Professor Correia's Podcasts</h1>
+  <p style="text-align: center;">Email me at correia@gonzaga.edu for episode suggestions</p>
 
-    <section class="embed-box">
-      <h2>World Population Growth</h2>
-      <iframe src="https://ourworldindata.org/grapher/population" loading="lazy" style="width: 100%; height: 600px; border: 0px none;" name="ourworldindata-embed"></iframe>
-    </section>
-  </main>
+  <!-- ===================== MENU OF IMAGES ===================== -->
+  <!-- Click an image and it jumps down to its video. -->
+  <!-- MIND works. Use it as your model. -->
+  <ul>
 
-  <footer>Built by Christian Mohlenhoff · BMIS 235</footer>
+    <li><h2>For the Mind</h2></li>
+    <li><a href="#findingmastery"><img src="gervais.jpg" width="400" height="400" alt="..."></a></li>
 
+    <li><h2>For the Body</h2></li>
+    <li><a href="#huberman"><img src="huberman.jpg" width="400" height="400" alt="..."></a></li>
+
+    <li><h2>For the Craft</h2></li>
+    <li><a href="#fridman"><img src="fridman.jpg" width="400" height="400" alt="..."></a></li>
+
+  </ul>
+
+  <!-- ===================== VIDEO SECTIONS ===================== -->
+
+  <!-- MIND: Finding Mastery -->
+  <a id="findingmastery"></a>
+  <a href="https://www.youtube.com/@FindingMastery">
+    <h2>Finding Mastery</h2>
+  </a>
+  <center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4L98ssI5Vxw" title="..."></iframe>
+  </center>
+
+  <!-- BODY: Huberman Lab -->
+  <a id="huberman"></a>
+  <a href="https://www.youtube.com/@hubermanlab">
+    <h2>Huberman Lab</h2>
+  </a>
+  <center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pq6WHJzOkno" title="..."></iframe>
+  </center>
+
+  <!-- CRAFT: Lex Fridman Podcast -->
+  <a id="fridman"></a>
+  <a href="https://www.youtube.com/@lexfridman">
+    <h2>Lex Fridman Podcast</h2>
+  </a>
+  <center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/kFQUDCgMjRc" title="..."></iframe>
+  </center>
+
+  <p style="font-size: small; text-align: center;"><a href="#top">To top</a></p>
+
+  <!-- ===================== YOUR EMBED BLOCK ===================== -->
+  <!-- This section is always the opposite color of the page. -->
+  <!-- 1. Pick ONE: a Google Map, or an Our World in Data chart. -->
+  <!-- 2. Copy its embed code (it starts with <iframe). -->
+  <!-- 3. Paste it on the empty line below the heading. -->
+  <!-- 4. Change the heading to say what it is. -->
+  <section id="embed-block">
+    <h2>World Population Growth</h2>
+    <iframe src="https://ourworldindata.org/grapher/population?tab=chart" loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
+  </section>
+
+  <!-- Footer: fill in your name -->
+  <p style="text-align: center;">Built by Christian Mohlenhoff &middot; BMIS 235</p>
+
+
+  <!-- ===================== DARK MODE SCRIPT ===================== -->
   <script>
-    // Simple Dark Mode Toggle
-    let lightColor = '#ffffff';
-    let darkColor = '#1e1e1e';
-    let btn = document.createElement('button');
-    btn.innerText = 'Toggle Dark Mode';
-    btn.style.margin = '1rem 0';
-    document.body.insertBefore(btn, document.querySelector('footer'));
-    btn.onclick = () => {
-      document.body.style.background = document.body.style.background === 'rgb(30, 30, 30)' ? lightColor : darkColor;
-      document.body.style.color = document.body.style.color === 'white' ? 'black' : 'white';
-    };
+    // 1. Your two colors. Change these to your own.
+    var lightColor = "#f4f1ea";
+    var darkColor = "#1b263b";
+
+    // 2. Which mode the page is in right now
+    var dark = false;
+
+    // 3. Paint the page one color and the embed block the other
+    function paint() {
+      var pageColor = dark ? darkColor : lightColor;
+      var blockColor = dark ? lightColor : darkColor;
+      document.body.style.backgroundColor = pageColor;
+      document.body.style.color = dark ? "white" : "black";
+      var block = document.getElementById("embed-block");
+      block.style.backgroundColor = blockColor;
+      block.style.color = dark ? "black" : "white";
+    }
+
+    // 4. When the button is clicked: flip the mode, then repaint
+    function toggleDark() {
+      dark = !dark;
+      paint();
+    }
+
+    // 5. Paint once when the page first loads
+    paint();
   </script>
 
 </body>
