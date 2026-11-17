@@ -23,73 +23,55 @@
 <body id="top">
 
   <header>
-    <h1>Christian Mohlenhoff's Podcasts</h1>
-    <p>Email me at <a href="mailto:cmohlenhoff@zagmail.gonzaga.edu">cmohlenhoff@zagmail.gonzaga.edu</a> for episode suggestions</p>
+    <h1>Mind, Body, Craft</h1>
+    <p>A curated collection of podcasts for focus, health, and mastery.</p>
+    <nav>
+      <a href="#hubermanlab">Jump to Huberman Lab Video</a>
+    </nav>
   </header>
 
-  <nav>
-    <ul class="row">
-      <li><a href="#findingmastery">Finding Mastery</a></li>
-      <li><a href="#hubermanlab">Huberman Lab</a></li>
-      <li><a href="#lexfridman">Lex Fridman Podcast</a></li>
-    </ul>
-  </nav>
+  <main>
+    <section>
+      <h2>Featured Shows</h2>
+      <ul class="row">
+        <li>
+          <img src="huberman.jpg" alt="Huberman Lab Podcast Banner">
+          <p><strong>Huberman Lab</strong> — Neuroscience & Health</p>
+        </li>
+      </ul>
+    </section>
 
-  <hr>
+    <section id="hubermanlab">
+      <h2>Mind & Body: Huberman Lab</h2>
+      <iframe src="https://www.youtube.com/embed/gXVUOI75MaY" title="Huberman Lab Podcast" allowfullscreen></iframe>
+    </section>
 
-  <!-- MIND video: works ✓ -->
-  <a id="findingmastery"></a>
-  <h2>Finding Mastery</h2>
-  <iframe src="https://www.youtube.com/embed/fLqzYDZAqCI" title="Finding Mastery" allowfullscreen></iframe>
+    <section>
+      <h2>Craft & Mastery</h2>
+      <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Lofi Girl Radio" allowfullscreen></iframe>
+    </section>
 
-  <!-- BODY video: works ✓ -->
-  <a id="hubermanlab"></a>
-  <h2>Huberman Lab</h2>
-  <iframe src="https://www.youtube.com/embed/pq6WHJz0kno" title="Huberman Lab" allowfullscreen></iframe>
-
-  <!-- CRAFT video: fix the YouTube link so it plays in an embed -->
-  <a id="lexfridman"></a>
-  <h2>Lex Fridman Podcast</h2>
-  <iframe src="https://www.youtube.com/embed/JN3KPFbWCy8" title="Lex Fridman Podcast" allowfullscreen></iframe>
-
-  <p><a href="#top">To top</a></p>
-
-  <!-- YOUR EMBED BLOCK: paste a Google Map or Our World in Data chart here -->
-  <div class="embed-box" id="embedBlock">
-    <h2>World Population Growth</h2>
-    <iframe src="https://ourworldindata.org/grapher/population" loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
-  </div>
+    <section class="embed-box">
+      <h2>World Population Growth</h2>
+      <iframe src="https://ourworldindata.org/grapher/population" loading="lazy" style="width: 100%; height: 600px; border: 0px none;" name="ourworldindata-embed"></iframe>
+    </section>
+  </main>
 
   <footer>Built by Christian Mohlenhoff · BMIS 235</footer>
 
   <script>
-    // 1. Two colors – change these two lines to make it yours
-    let lightColor = "#E2E8E4";
-    let darkColor  = "#2C5234";
-
-    // 2. A memory of which mode we're in
-    let dark = false;
-
-    // 3. Paint the page one color and the embed box the other
-    function paint() {
-      document.body.style.backgroundColor = dark ? darkColor : lightColor;
-      document.body.style.color           = dark ? lightColor : darkColor;
-      let box = document.getElementById("embedBlock");
-      box.style.backgroundColor           = dark ? lightColor : darkColor;
-      box.style.color                     = dark ? darkColor : lightColor;
-    }
-
-    // 4. Flip dark mode on click, then repaint
-    function toggleDark() {
-      dark = !dark;
-      paint();
-    }
-
-    // 5. Paint once when the page loads
-    paint();
-
-    // 6. When someone clicks anywhere on the body, toggle
-    document.body.addEventListener("click", toggleDark);
+    // Simple Dark Mode Toggle
+    let lightColor = '#ffffff';
+    let darkColor = '#1e1e1e';
+    let btn = document.createElement('button');
+    btn.innerText = 'Toggle Dark Mode';
+    btn.style.margin = '1rem 0';
+    document.body.insertBefore(btn, document.querySelector('footer'));
+    btn.onclick = () => {
+      document.body.style.background = document.body.style.background === 'rgb(30, 30, 30)' ? lightColor : darkColor;
+      document.body.style.color = document.body.style.color === 'white' ? 'black' : 'white';
+    };
   </script>
+
 </body>
 </html>
