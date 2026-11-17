@@ -2,6 +2,7 @@
 
 **Name:** Christian Mohlenhoff
 **GU username:** cmohlenhoff
+**GitHub username:** clmoh55
 
 My live page: https://clmoh55.github.io/bmis235-html-2/
 
